@@ -6,7 +6,6 @@ h1 {
 
 p {
   color: red;
-  text-align: center;
 }
 
 
@@ -15,6 +14,7 @@ body {
   padding: 1em;
   margin: 0 auto;
   max-width: 63em;
+  text-align: center;
 }
 
 
