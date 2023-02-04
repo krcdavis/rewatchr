@@ -14,7 +14,6 @@ body {
   padding: 1em;
   margin: 0 auto;
   max-width: 63em;
-  text-align: center;
 }
 
 
@@ -28,6 +27,20 @@ body {
   width: calc(90% - 30px);
   background-color: rebeccapurple;
   color: white;
+}
+
+.condiment {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.vibeo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 
