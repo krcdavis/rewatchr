@@ -18,8 +18,12 @@
 <iframe src="//www.youtube.com/embed/qO3ZTe9YENY" 
 frameborder="0" allowfullscreen class="vibeo"></iframe>
 </div>
+    var t = Date().getTime();
+    t = Math.floor(t / 600000)//ten minutes
+    t = t % 12
+    document.getElementById('shneg').innerHTML = t
 
-    <p>
+    <p id = "shneg">
       This is the second paragraph. It contains an <em>emphasized</em> element.
     </p>
 
