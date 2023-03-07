@@ -25,7 +25,7 @@ $(document).ready(function() {
     t = t % 12
     document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
-    veeb.addEventListener("onStateChange", "nextID"):Void
+    veeb.addEventListener("onStateChange", "nextID");
 });
 
 function onLoad() {
