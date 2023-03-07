@@ -16,7 +16,7 @@ const tsuki = ['qO3ZTe9YENY',
 'l94xbILThFM'];
 
 const firsthalf = '<iframe class="vibeo" id = "veeb" src="//www.youtube.com/embed/'
-const sndhalf = '?enablejsapi=1" frameborder="0" allowfullscreen></iframe>'
+const sndhalf = '?enablejsapi=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>'
 
 
 $(document).ready(function() {
