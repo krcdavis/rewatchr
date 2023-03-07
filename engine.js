@@ -21,13 +21,13 @@ const sndhalf = '?enablejsapi=1" frameborder="0" allow="autoplay" allowfullscree
 
 
 $(document).ready(function() {
-    player = document.getElementById(playerId);
+    //player = document.getElementById(playerId);
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
-    veeb.addEventListener("onStateChange", "nextID");
+    //veeb.addEventListener("onStateChange", "nextID");
 });
 
 function onLoad() {
