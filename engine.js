@@ -1,6 +1,7 @@
 //globulars
 var t = 0
 var d = new Date();
+var player
 
 const tsuki = ['qO3ZTe9YENY',
 'HlnaIqf4Nys',
@@ -20,6 +21,7 @@ const sndhalf = '?enablejsapi=1" frameborder="0" allow="autoplay" allowfullscree
 
 
 $(document).ready(function() {
+    player = document.getElementById(playerId);
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
