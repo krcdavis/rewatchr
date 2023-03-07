@@ -23,6 +23,7 @@ $(document).ready(function() {
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
+    document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
     veeb.addEventListener(event:String, listener:String):Void
     onStateChange
