@@ -27,7 +27,7 @@ $(document).ready(function() {
     document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
     player = document.getElementById("veeb");
-    player.addEventListener("onStateChange", "nextID");
+    player.addEventListener("onStateChange", nextID);
 });
 
 function nextID() {
