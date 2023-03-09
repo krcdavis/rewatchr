@@ -27,10 +27,10 @@ $(document).ready(function() {
     document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
     player = document.getElementById("veeb");
-    player.addEventListener("onStateChange", nextID);
+    player.addEventListener("ended", nextID);
 });
 
-function nextID(newState) {
+function nextID() {
  t = (t + 1) % 12
  loadVid(tsuki[t])
 }
