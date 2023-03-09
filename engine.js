@@ -21,18 +21,14 @@ const sndhalf = '?enablejsapi=1" frameborder="0" allow="autoplay" allowfullscree
 
 
 $(document).ready(function() {
-    //player = document.getElementById(playerId);
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
     document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
-    //veeb.addEventListener("onStateChange", "nextID");
+    player = document.getElementById("veeb");
+    player.addEventListener("onStateChange", "nextID");
 });
-
-function onLoad() {
- 
-}
 
 function nextID() {
  t = (t + 1) % 12
@@ -40,5 +36,5 @@ function nextID() {
 }
 
 function loadVid(vid) {
- document.getElementById('continent').innerHTML=firsthalf + vid + sndhalf
+    document.getElementById("shneg").innerHTML = t//test
 }
