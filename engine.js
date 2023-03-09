@@ -30,11 +30,12 @@ $(document).ready(function() {
     player.addEventListener("onStateChange", nextID);
 });
 
-function nextID() {
+function nextID(newState) {
  t = (t + 1) % 12
  loadVid(tsuki[t])
 }
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
+    console.log("help me")
 }
