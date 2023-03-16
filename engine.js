@@ -17,7 +17,7 @@ const tsuki = ['qO3ZTe9YENY',
 'l94xbILThFM'];
 
 
-window.onload = function () {
+$(document).ready(function() {
     player = document.getElementById("veeb");
 
     t = d.getTime();
