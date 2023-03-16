@@ -24,7 +24,7 @@ $(document).ready(function() {
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
-    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
+    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]) + "?enablejsapi=1?rel=0";
     player.addEventListener("ended", nextID);
 });
 
