@@ -16,17 +16,15 @@ const tsuki = ['qO3ZTe9YENY',
 '4ESB_KjztRw',
 'l94xbILThFM'];
 
-const firsthalf = '<iframe class="vibeo" id = "veeb" src="//www.youtube.com/embed/'
-const sndhalf = '?enablejsapi=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>'
 
+window.onload = function () {
+    player = document.getElementById("veeb");
 
-$(document).ready(function() {
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
-    document.getElementById('cond').innerHTML = firsthalf + tsuki[t] + sndhalf
-    player = document.getElementById("veeb");
+    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
     player.addEventListener("ended", nextID);
 });
 
@@ -37,5 +35,6 @@ function nextID() {
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
+    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
     console.log("help me")
 }
