@@ -24,17 +24,18 @@ $(document).ready(function() {
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
-    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]) + "?enablejsapi=1?rel=0";
+    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]) + "?enablejsapi=1?rel=0");
+    //this much works, but...
     player.addEventListener("ended", nextID);
 });
 
 function nextID() {
+ console.log("help me")
  t = (t + 1) % 12
  loadVid(tsuki[t])
 }
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
-    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
-    console.log("help me")
+    player.setAttribute('src', "https://www.youtube.com/embed/" + vid + "?enablejsapi=1?rel=0");
 }
