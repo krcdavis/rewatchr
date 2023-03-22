@@ -18,6 +18,8 @@ const tsuki = ['qO3ZTe9YENY',
 
 
 $(document).ready(function() {
+    console.log("aeiou")
+    
     player = document.getElementById("veeb");
 
     t = d.getTime();
