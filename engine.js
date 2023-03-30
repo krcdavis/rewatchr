@@ -1,7 +1,7 @@
 //globulars
 var t = 0
 var d = new Date();
-var player
+//var player
 
 const tsuki = ['qO3ZTe9YENY',
 'HlnaIqf4Nys',
@@ -17,27 +17,57 @@ const tsuki = ['qO3ZTe9YENY',
 'l94xbILThFM'];
 
 
-$(document).ready(function() {
-    console.log("aeiou")
-    
-    player = document.getElementById("veeb");
+window.onload = function () {
+//    player = document.getElementById("veeb");
+
+    //okay fine i'll do whatever the heck this is
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     t = d.getTime();
     t = Math.floor(t / 600000)//ten minutes
     t = t % 12
     document.getElementById("shneg").innerHTML = t
-    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t] + "?enablejsapi=1&rel=0");
-    //this much works, but...
-    player.addEventListener("ended", nextID);
+
+//    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
+//    player.addEventListener("ended", nextID);
+
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videobox', {
+          height: '390',
+          width: '640',
+          videoId: tsuki[t],
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
 });
 
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+
 function nextID() {
- console.log("help me")
  t = (t + 1) % 12
  loadVid(tsuki[t])
 }
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
-    player.setAttribute('src', "https://www.youtube.com/embed/" + vid + "?enablejsapi=1&rel=0");
+    player.setAttribute('src', "https://www.youtube.com/embed/" + tsuki[t]);
+    console.log("help me")
 }
