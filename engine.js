@@ -16,13 +16,6 @@ const tsuki = ['qO3ZTe9YENY',
 '4ESB_KjztRw',
 'l94xbILThFM'];
 
-window.onload = function () {
-
-    t = d.getTime();
-    t = Math.floor(t / 600000)//ten minutes
-    t = t % 12
-    document.getElementById("shneg").innerHTML = t
-}
 
   var tag = document.createElement('script');
   tag.id = 'iframe-demo';
@@ -32,10 +25,22 @@ window.onload = function () {
 
   var player;
   function onYouTubeIframeAPIReady() {
+
+    t = d.getTime();
+    t = Math.floor(t / 600000)//ten minutes
+    t = t % 12
+    document.getElementById("shneg").innerHTML = t
+
     player = new YT.Player('videobox', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
+          height: '390',
+          width: '640',
+          videoId: tsuki[t],
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
         }//ev
     });//videobox
   }//func
