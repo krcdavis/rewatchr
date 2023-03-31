@@ -49,9 +49,8 @@ const tsuki = ['qO3ZTe9YENY',
     document.getElementById('shneg').innerHTML = t;//test
   }
 
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED):
-    {
+  function onPlayerStateChange(ebent) {
+    if (ebent.data == YT.PlayerState.ENDED) {
         nextID()
     }
   }
