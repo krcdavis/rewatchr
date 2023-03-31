@@ -33,6 +33,7 @@ body {
 .condiment {
     position: relative;
     width: 100%;
+    background-color: yellow;
     height: 0;
     padding-bottom: 56.25%;
 }
