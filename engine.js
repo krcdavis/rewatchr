@@ -32,8 +32,8 @@ const tsuki = ['qO3ZTe9YENY',
     document.getElementById("shneg").innerHTML = t
 
     player = new YT.Player('videobox', {
-          height: '780',
-          width: '1280',
+          height: '585',
+          width: '960',
           videoId: tsuki[t],
           playerVars: {
             'playsinline': 1
