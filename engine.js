@@ -58,7 +58,9 @@ function nextVid() {
     var tp = d.getTime();
     //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
-    if ( tt === t - (t % hour) ) {
+console.log(tt)
+console.log(t - (t % hour))
+    if ( tt == t - (t % hour) ) {
         t = t + 1;
     }
     var sbeve;
@@ -99,7 +101,8 @@ function nextVid() {
 
     if (bonus) { bonus = false; }
     else {
-        if (seedRand(t, 4) == 1)
+        var snoig = d.getTime();
+        if (seedRand(snoig, 4) === 0)
             { bonus = true; }
     }
 }
