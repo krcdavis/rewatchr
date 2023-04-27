@@ -100,7 +100,7 @@ function nextVid() {
     if (bonus) { bonus = false; }
     else {
         var snoig = d.getTime();
-        if (seedRand(snoig, 4) === 0)
+        if (seedRand(snoig, 2) === 0)
             { bonus = true; }
     }
 }
