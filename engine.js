@@ -101,8 +101,7 @@ console.log(t - (t % hour))
 
     if (bonus) { bonus = false; }
     else {
-        var snoig = d.getTime();
-        if (seedRand(snoig, 4) === 0)
+        if (seedRand(t, 5) == 0)
             { bonus = true; }
     }
 }
