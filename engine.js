@@ -2,13 +2,17 @@
 var t = 0
 var d = new Date();
 
-var hour = 3600000
+var hour = 3600000;
+
+var bonus = false;
 
 const vids = {
 'interest':	['iJyweEcpsGc', 'FG4s0yxE5pY', 'qnKtglBqe78', 'Qaptvhky8IQ', '-I-umggx8Gc', 'owWtVVOSW0c','RQSBj2LKkWg'],
 'spooky':	['eZRu3Ao6zK8','SpeSpA3e56A', 'PSFY4k7KeQI', 'kKS4nm4Na-s', 'j_YznrHxphc'],
-'gaming':	['AzTi_Gt-eSI','UdDf36LskNQ','YJEPdn_5ya4','OG8aTcZlyds','uHQ4WCU1WQc','Zr6xVy-9F7Q','mI3Xig4IfqI'],
-'tsuki':	['qO3ZTe9YENY','HlnaIqf4Nys','s7JrLG2D358','RqovLOG2SnY','BWsUzY50POQ','Z99f_Y0ZYkQ','0-aBfM2_k4Q','nRGxQikzmpQ','hBdOfKPAfNE','s6UMSc8ZS5s','4ESB_KjztRw','l94xbILThFM']
+'gaming':	['AzTi_Gt-eSI', 'UdDf36LskNQ', 'YJEPdn_5ya4', 'OG8aTcZlyds', 'uHQ4WCU1WQc', 'Zr6xVy-9F7Q', 'mI3Xig4IfqI', 'yXbJe-rUNP8'],
+'bonus':	['PpJqrKAYFF8', 'EShUeudtaFg', '15nNY7uofNw', '29vjQwnt-Fw', 'ls3qDfTP0mw', 'PXx9TGsiwV0'],
+
+'tsuki':	['qO3ZTe9YENY', 'HlnaIqf4Nys', 's7JrLG2D358', 'RqovLOG2SnY', 'BWsUzY50POQ', 'Z99f_Y0ZYkQ', '0-aBfM2_k4Q', 'nRGxQikzmpQ', 'hBdOfKPAfNE', 's6UMSc8ZS5s', '4ESB_KjztRw', 'l94xbILThFM']
 };
 
   var tag = document.createElement('script');
@@ -37,11 +41,10 @@ const vids = {
             'onStateChange': onPlayerStateChange
         }//ev
     });//videobox
-
-    
   }//func
 
   function onPlayerReady(ebent) {
+    player.setVolume(50)
     nextVid()
   }
 
@@ -53,52 +56,52 @@ const vids = {
 
 function nextVid() {
     var tp = d.getTime();
+    //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
     if ( tt === t - (t % hour) ) {
         t = t + 1;
     }
-    var vib = ""
-    var rnd = 0
+    var sbeve;
+    //if bonus, set sbeve to bonus and continue, else-
+    var num = Math.floor(tp / hour) % 7
+    if (bonus) { num = -1; }
 
-    switch (Math.floor(tp / hour) % 7) {
+    switch (num) {
+        case -1:
+            sbeve = vids.bonus
+            break;
         case 0://interest
-            rnd = seedRand(t, vids.interest.length)
-            vib = vids.interest[rnd]
-            loadVid(vib)
+            sbeve = vids.interest
             break;
         case 1://spooky
-            rnd = seedRand(t, vids.spooky.length)
-            vib = vids.spooky[rnd]
-            loadVid(vib)
+            sbeve = vids.spooky
             break;
         case 2://gaming
-            rnd = seedRand(t, vids.gaming.length)
-            vib = vids.gaming[rnd]
-            loadVid(vib)
+            sbeve = vids.gaming
             break;
         case 3://interest
-            rnd = seedRand(t, vids.interest.length)
-            vib = vids.interest[rnd]
-            loadVid(vib)
+            sbeve = vids.interest
             break;
         case 4://gaming
-            rnd = seedRand(t, vids.gaming.length)
-            vib = vids.gaming[rnd]
-            loadVid(vib)
+            sbeve = vids.gaming
             break;
         case 5://interest
-            rnd = seedRand(t, vids.interest.length)
-            vib = vids.interest[rnd]
-            loadVid(vib)
+            sbeve = vids.interest
             break;
-        default://spooky
-            rnd = seedRand(t, vids.spooky.length)
-            vib = vids.spooky[rnd]
-            loadVid(vib)
+        default://6: spooky
+            sbeve = vids.spooky
             break;
-    //already i've thought of a better
-    
     }//sw
+
+    var rnd = seedRand(t, sbeve.length)
+    var vib = sbeve[rnd]
+    loadVid(vib)
+
+    if (bonus) { bonus = false; }
+    else {
+        if (seedRand(d.getTime(), 4) === 0)
+            { bonus = true; }
+    }
 }
 
 /////
