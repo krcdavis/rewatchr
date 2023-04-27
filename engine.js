@@ -7,7 +7,7 @@ var hour = 3600000
 const vids = {
 'interest':	['iJyweEcpsGc', 'FG4s0yxE5pY', 'qnKtglBqe78', 'Qaptvhky8IQ', '-I-umggx8Gc', 'owWtVVOSW0c','RQSBj2LKkWg'],
 'spooky':	['eZRu3Ao6zK8','SpeSpA3e56A', 'PSFY4k7KeQI', 'kKS4nm4Na-s', 'j_YznrHxphc'],
-'gaming':	['',''],
+'gaming':	['AzTi_Gt-eSI','UdDf36LskNQ','YJEPdn_5ya4','OG8aTcZlyds','uHQ4WCU1WQc','Zr6xVy-9F7Q','mI3Xig4IfqI'],
 'tsuki':	['qO3ZTe9YENY','HlnaIqf4Nys','s7JrLG2D358','RqovLOG2SnY','BWsUzY50POQ','Z99f_Y0ZYkQ','0-aBfM2_k4Q','nRGxQikzmpQ','hBdOfKPAfNE','s6UMSc8ZS5s','4ESB_KjztRw','l94xbILThFM']
 };
 
@@ -38,11 +38,11 @@ const vids = {
         }//ev
     });//videobox
 
-    //nextVid()
+    
   }//func
 
   function onPlayerReady(ebent) {
-    document.getElementById('shneg').innerHTML = t;//test
+    nextVid()
   }
 
   function onPlayerStateChange(ebent) {
