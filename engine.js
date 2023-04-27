@@ -38,7 +38,7 @@ const vids = {
         }//ev
     });//videobox
 
-    nextVid()
+    //nextVid()
   }//func
 
   function onPlayerReady(ebent) {
