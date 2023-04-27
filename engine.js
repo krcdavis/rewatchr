@@ -99,7 +99,7 @@ function nextVid() {
 
     if (bonus) { bonus = false; }
     else {
-        if (seedRand(t, 2) == 1)
+        if (seedRand(t, 4) == 1)
             { bonus = true; }
     }
 }
