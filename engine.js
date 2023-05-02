@@ -55,8 +55,8 @@ const vids = {
   }
 
 function nextVid() {
-    var dd = new Date();
-    var tp = dd.getTime();
+    //var dd = new Date();
+    var tp = Date.now();
     //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
 console.log(tp)
