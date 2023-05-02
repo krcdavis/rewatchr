@@ -58,6 +58,7 @@ function nextVid() {
     var tp = d.getTime();
     //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
+console.log(tp)
 console.log(tt)
 console.log(t - (t % hour))
     if ( tt == t - (t % hour) ) {
