@@ -1,9 +1,6 @@
 //globulars
 var t = 0
-var d = new Date();
-
 var hour = 3600000;
-
 var bonus = false;
 
 const vids = {
@@ -24,8 +21,8 @@ const vids = {
   var player;
   function onYouTubeIframeAPIReady() {
 
-    t = d.getTime();
-    t = t - (t % hour)
+    //t = Date.now();
+    //t = t - (t % hour)
     
     document.getElementById("shneg").innerHTML = t
 
@@ -55,7 +52,6 @@ const vids = {
   }
 
 function nextVid() {
-    //var dd = new Date();
     var tp = Date.now();
     //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
