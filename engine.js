@@ -55,7 +55,8 @@ const vids = {
   }
 
 function nextVid() {
-    var tp = d.getTime();
+    var dd = new Date();
+    var tp = dd.getTime();
     //if hour of day == 4 and t % hour == 0: t += 1; tsuki[day % 12]
     var tt = tp - (tp % hour)
 console.log(tp)
@@ -63,6 +64,9 @@ console.log(tt)
 console.log(t - (t % hour))
     if ( tt == t - (t % hour) ) {
         t = t + 1;
+    }
+    else {
+        t = tt
     }
     var sbeve;
     //if bonus, set sbeve to bonus and continue, else-
@@ -102,7 +106,8 @@ console.log(t - (t % hour))
 
     if (bonus) { bonus = false; }
     else {
-        if (seedRand(t, 5) == 0)
+        var snoig = d.getTime();
+        if (seedRand(snoig, 4) === 0)
             { bonus = true; }
     }
 }
