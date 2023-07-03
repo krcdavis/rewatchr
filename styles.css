@@ -1,7 +1,7 @@
 h1 {
   color: blue;
   background-color: yellow;
-  border: 1px solid black;
+  border: 1px solid #111111;
 }
 
 p {
@@ -10,6 +10,7 @@ p {
 
 
 body {
+  background-color: #111111;
   font: 1em/150% Helvetica, Arial, sans-serif;
   padding: 1em;
   margin: 0 auto;
@@ -33,7 +34,6 @@ body {
 .contain {
     position: relative;
     width: 100%;
-    background-color: yellow;
     height: 0;
     padding-bottom: 56.25%;
 }
