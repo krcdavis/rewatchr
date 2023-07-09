@@ -27,8 +27,8 @@ const vids = {
     document.getElementById("shneg").innerHTML = t
 
     player = new YT.Player('videobox', {
-          height: inherit,
-          width: inherit,
+          height: 540,
+          width: 960,
           videoId: vids.tsuki[0],//this is a placeholder
           playerVars: {
             'playsinline': 1
