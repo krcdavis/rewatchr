@@ -24,6 +24,8 @@ var bonus = false;
             'onStateChange': onPlayerStateChange
         }//ev
     });//videobox
+    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
+
   }//func
 
   function onPlayerReady(ebent) {
