@@ -85,7 +85,7 @@ function nextVid() {
 
     if (bonus) { bonus = false; }
     else {
-        var snoig = d.getTime();
+        var snoig = Date.now();
         if (seedRand(snoig, 4) === 0)
             { bonus = true; }
     }
