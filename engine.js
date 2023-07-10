@@ -24,8 +24,8 @@ var bonus = false;
             'onStateChange': onPlayerStateChange
         }//ev
     });//videobox
-    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
-
+    var offset = new Date().getTimezoneOffset();
+console.log(offset);
   }//func
 
   function onPlayerReady(ebent) {
