@@ -13,8 +13,8 @@ var bonus = false;
   function onYouTubeIframeAPIReady() {
 
     player = new YT.Player('videobox', {
-          height: 100%,
-          width: 100%,
+          height: '100%',
+          width: '100%',
           videoId: vids.tsuki[0],//this is a placeholder
           playerVars: {
             'playsinline': 1
