@@ -72,7 +72,7 @@ function nextVid() {
             sbeve = vids.gaming
             break;
         case 5://interest
-            sbeve = vids.interest
+            sbeve = vids.gameplay
             break;
         default://6: spooky
             sbeve = vids.spooky
