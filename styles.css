@@ -4,6 +4,11 @@ h1 {
   border: 1px solid #111111;
 }
 
+iframe {
+  width: inherit;
+  height: inherit;
+}
+
 p {
   color: red;
 }
@@ -36,7 +41,6 @@ body {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%;
-    background-color: rebeccapurple;
 }
 .vibeo {
     position: absolute;
