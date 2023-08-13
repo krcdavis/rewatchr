@@ -13,8 +13,8 @@ var bonus = false;
   function onYouTubeIframeAPIReady() {
 
     player = new YT.Player('videobox', {
-          //height: '540',
-          //width: '960',
+          height: '540',
+          width: '960',
           videoId: vids.tsuki[0],//this is a placeholder
           playerVars: {
             'playsinline': 1
@@ -24,8 +24,6 @@ var bonus = false;
             'onStateChange': onPlayerStateChange
         }//ev
     });//videobox
-    var offset = new Date().getTimezoneOffset();
-console.log(offset);
   }//func
 
   function onPlayerReady(ebent) {
@@ -96,7 +94,7 @@ function nextVid() {
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
-    player.loadVideoById(vid);
+    player.loadVideoById(vid.id);
 
 }
 
