@@ -1,7 +1,7 @@
 //globulars
 var t = 0
 var hour = 3600000;
-var bonus = false;
+var bonusflag = false;
 
   var tag = document.createElement('script');
   tag.id = 'iframe-demo';
@@ -50,7 +50,7 @@ function nextVid() {
     var sbeve;
     //if bonus, set sbeve to bonus and continue, else-
     var num = Math.floor(tp / hour) % 7//going up to 11 next
-    if (bonus) { num = -1; }
+    if (bonusflag) { num = -1; }
 
     switch (num) {
         case -1:
@@ -83,11 +83,11 @@ function nextVid() {
     var vib = sbeve[rnd]
     loadVid(vib)
 
-    if (bonus) { bonus = false; }
+    if (bonusflag) { bonusflag = false; }
     else {
         var snoig = Date.now();
         if (seedRand(snoig, 4) === 0)
-            { bonus = true; }
+            { bonusflag = true; }
     }
 }
 
