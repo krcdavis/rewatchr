@@ -15,7 +15,7 @@ var bonusflag = false;
     player = new YT.Player('videobox', {
           height: '540',
           width: '960',
-          videoId: vids.tsuki[0],//this is a placeholder
+          videoId: interest[0],//this is a placeholder
           playerVars: {
             'playsinline': 1
           },
@@ -54,28 +54,28 @@ function nextVid() {
 
     switch (num) {
         case -1:
-            sbeve = vids.bonus
+            sbeve = bonus
             break;
         case 0://interest
-            sbeve = vids.interest
+            sbeve = interest
             break;
         case 1://spooky
-            sbeve = vids.spooky
+            sbeve = spooky
             break;
         case 2://gaming
-            sbeve = vids.gaming
+            sbeve = gaming
             break;
         case 3://interest
-            sbeve = vids.interest
+            sbeve = interest
             break;
         case 4://gaming
-            sbeve = vids.gaming
+            sbeve = gaming
             break;
         case 5://interest
-            sbeve = vids.gameplay
+            sbeve = gameplay
             break;
         default://6: spooky
-            sbeve = vids.spooky
+            sbeve = spooky
             break;
     }//sw
 
