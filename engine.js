@@ -78,6 +78,8 @@ function nextVid() {
             sbeve = spooky
             break;
     }//sw
+//TESTING PURPOSES
+sbeve = test1
 
     var rnd = seedRand(t, sbeve.length)
     var vib = sbeve[rnd]
@@ -94,7 +96,20 @@ function nextVid() {
 
 function loadVid(vid) {
     document.getElementById("shneg").innerHTML = t//test
-    player.loadVideoById(vid.id);
+    //if has end, start ?? 0
+    //player.loadVideoById(vid.id);
+
+
+if ( Object.hasOwn(vid, 'end') ) {
+player.loadVideoById({'videoId': vid.id,
+               'startSeconds': vid.start ?? 0,
+               'endSeconds': vid.end});
+}
+else{
+player.loadVideoById({'videoId': vid.id,
+               'startSeconds': vid.start ?? 0});
+
+}
 
 }
 
