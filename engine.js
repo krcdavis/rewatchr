@@ -79,7 +79,7 @@ function nextVid() {
             break;
     }//sw
 //TESTING PURPOSES
-sbeve = test1
+//sbeve = test1
 
     var rnd = seedRand(t, sbeve.length)
     var vib = sbeve[rnd]
