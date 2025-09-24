@@ -15,7 +15,7 @@ var bonusflag = false;
     player = new YT.Player('videobox', {
           height: '540',
           width: '960',
-          videoId: 'sCvszgwu10w',//this is a placeholder
+          videoId: "sCvszgwu10w",//this is a placeholder sCvszgwu10w
           playerVars: {
             'playsinline': 1
           },
@@ -129,4 +129,5 @@ while (ss < 0) {
  }
 return ss;//feckin negatives
 }
+
 
