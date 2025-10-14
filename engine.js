@@ -1,4 +1,7 @@
-//globulars
+
+const crypto = require('crypto');
+
+//global
 var t = 0
 var hour = 3600000;
 var bonusflag = false;
@@ -114,8 +117,7 @@ player.loadVideoById({'videoId': vid.id,
 }
 
 
-//const crypto = require('crypto');
-import crypto from "crypto";
+
 
 //sneeded rand
 //let's fix this.
