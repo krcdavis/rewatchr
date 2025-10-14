@@ -114,7 +114,8 @@ player.loadVideoById({'videoId': vid.id,
 }
 
 
-const crypto = require('crypto');
+//const crypto = require('crypto');
+import crypto from "crypto";
 
 //sneeded rand
 //let's fix this.
