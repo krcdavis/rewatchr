@@ -114,16 +114,20 @@ player.loadVideoById({'videoId': vid.id,
 }
 
 
+const crypto = require('crypto');
+
 //sneeded rand
+//let's fix this.
 function seedRand(seed, mod){
- sneed = seed.toString()
- let hash = 0;
- for (let i = 0, len = sneed.length; i < len; i++){
-  let chr = sneed.charCodeAt(i);
-  hash =  (hash << 5) - hash + chr;
-  hash |= 0;//I don't know what this does!
- }
-let ss = hash % mod;
+ //sneed = seed.toString()
+ const hash = crypto.createHash('md5');
+ hash.update(seed);
+ const dig = hash.digest('hex');
+//i don't know if i'm using it wrong or what, but for whatever reason these results have like 74 trailing zeroes in binary which rather limits the variety of outputs... so...
+ const newhash = Math.floor( parseInt(`0x${dig}`,16) / Math.pow(2,75) );
+
+let ss = newhash % mod;
+//md5 hash produces a buffer of bytes which can't technically be negative, probably, but...
 while (ss < 0) {
  ss += mod;
  }
